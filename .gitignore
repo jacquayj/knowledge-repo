@@ -110,3 +110,5 @@ ENV/
 
 # Mac OS X filesystem artifacts
 .DS_Store
+
+datalab-knowledge
