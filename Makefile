@@ -10,4 +10,4 @@ clean:
 	docker rmi knowledgerepo_app
 
 run:
-	docker-compose up
+	docker-compose up -d
