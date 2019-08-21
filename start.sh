@@ -8,13 +8,13 @@ echo
 # Exit script if any command returns a non-zero status
 set -e
 
-if [ ! -d "/app/datalab-knowledge" ]; then
+if [ ! -d "/app/${GIT_REPO}" ]; then
 	echo "Cloning research repo "
 
 	cd /app/
-	if [ -z "$(ls -A datalab-knowledge)" ]; then
+	if [ -z "$(ls -A ${GIT_REPO})" ]; then
 #		This will need to be the PAT for the knowledge repo github account
-		git clone http://root:admin1234@10.206.4.135:8081/root/datalab-knowledge.git
+		git clone http://${GIT_USER}:${GIT_PASSWORD}@${GITLAB_URL}/${GIT_REPO}
 	fi
 fi
 echo Runtime context ${RUNTIME_CONTEXT}
