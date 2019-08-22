@@ -79,7 +79,6 @@ celerybeat-schedule
 .env
 
 # docker
-Dockerfile
 docker-compose.yml
 
 # virtualenv
