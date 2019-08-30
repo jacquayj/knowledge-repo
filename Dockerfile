@@ -3,7 +3,7 @@ COPY . /app
 WORKDIR /app
 RUN pip install knowledge-repo[all]
 RUN pip install --upgrade requests psycopg2 requests_oauthlib flask_login flask_principal
-RUN apt-get install cron
+RUN apt-get update && apt-get install cron
 ADD crontab /etc/cron.d/kr-cron
 RUN chmod 0644 /etc/cron.d/kr-cron
 RUN chmod +x /app/git-clone.sh
