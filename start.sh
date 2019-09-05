@@ -24,10 +24,10 @@ cd /app/
 if [ "${RUNTIME_CONTEXT}" == "local" ]; then
     echo Starting local server
     echo ---
-    python scripts/knowledge_repo --repo ./datalab-knowledge --debug runserver --config ./server_config.py --port ${PORT}
+    python scripts/knowledge_repo --repo ./${GIT_REPO} --debug runserver --config ./server_config.py --port ${PORT}
 else
     echo Starting remote server
     echo ---
-    python scripts/knowledge_repo --repo ./datalab-knowledge runserver --config ./server_config.py --port ${PORT}
+    python scripts/knowledge_repo --repo ./${GIT_REPO} runserver --config ./server_config.py --port ${PORT}
 
 fi
