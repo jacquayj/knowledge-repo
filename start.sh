@@ -14,7 +14,7 @@ if [ ! -d "/app/${GIT_REPO}" ]; then
 	cd /app/
 	if [ -z "$(ls -A ${GIT_REPO})" ]; then
 #		This will need to be the PAT for the knowledge repo github account
-		git clone http://${GIT_USER}:${GIT_PASSWORD}@${GITLAB_URL}/${GIT_REPO}
+		git clone http://${GIT_USER}:${GIT_PASSWORD}@${GITLAB_URL}/${GIT_USER}/${GIT_REPO}
 	fi
 fi
 echo Runtime context ${RUNTIME_CONTEXT}
