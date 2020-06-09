@@ -64,7 +64,7 @@ DB_AUTO_UPGRADE = False
 # `KnowledgeAuthProvider` and add either the instance or identifier
 # used for that class below.
 # By default, the knowledge repo offers:
-# ['debug', 'oauth2', 'bitbucket', 'github', 'google']
+# ['debug', 'oauth2', 'bitbucket', 'github', 'google', 'ldap']
 AUTH_PROVIDERS = []
 
 # If you are going to use a OAuth provider, you will need to specify client ids
@@ -199,6 +199,18 @@ AUTH_USER_ATTRIBUTE_CACHE_LIFETIME = 24 * 60 * 60  # 1 day
 REMEMBER_COOKIE_DURATION = datetime.timedelta(days=365)
 
 # ---------------------------------------------------
+# LDAP configuration
+# ---------------------------------------------------
+# When using an LDAP server for user verification, you need to configure
+# the location of the server, and the directory structure used by your
+# organization.
+
+# Currently the port and protocol must both be included in the server address
+LDAP_SERVER = 'ldap://127.0.0.1:389'
+# When entering this, note the "{0}" which denotes where the user_id is inserted.
+LDAP_USERDN_SCHEMA = 'cn={user_id},ou=people,dc=planetexpress,dc=com'
+
+# ---------------------------------------------------
 # Policy configuration
 # ---------------------------------------------------
 # This section configures various policy related to access control.
@@ -211,6 +223,9 @@ POLICY_ANONYMOUS_VIEW_POST = True
 
 # Should anonymous users be able to view overall statistics
 POLICY_ANONYMOUS_VIEW_STATS = True
+
+# Should anonymous users be able to view tag pages
+POLICY_ANONYMOUS_VIEW_TAGS = True
 
 # Should anonymous users be able to download posts (or their source)
 POLICY_ANONYMOUS_DOWNLOADS = False
@@ -311,3 +326,9 @@ WEB_EDITOR_PREFIXES = ['webposts']
 # Posts with certain tags can be excluded from showing up
 # in the app. This can be useful for security purposes
 EXCLUDED_TAGS = ['private']
+
+
+# -------------
+# Collapse Code as Default Display Option
+# -------------
+COLLAPSE_CODE_DEFAULT = False

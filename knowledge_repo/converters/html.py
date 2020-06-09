@@ -208,7 +208,7 @@ class HTMLConverter(KnowledgePostConverter):
 
         # proxy posts are assumed to be embeddable links
         if 'proxy' in self.kp.headers:
-            return None, '<a href="{0}">Linked Post</a>\n<iframe width=100% height=800 src="{0}"></iframe>'.format(self.kp.headers['proxy'].strip())
+            return None, '<a href="{0}">Linked Post</a>\n<iframe width=100% height=1000 src="{0}"></iframe>'.format(self.kp.headers['proxy'].strip())
 
         html = ''
         if not skip_headers:
