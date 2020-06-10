@@ -80,7 +80,6 @@ celerybeat-schedule
 .env
 
 # docker
-Dockerfile
 docker-compose.yml
 
 # virtualenv
@@ -111,3 +110,5 @@ ENV/
 
 # Mac OS X filesystem artifacts
 .DS_Store
+
+datalab-knowledge
